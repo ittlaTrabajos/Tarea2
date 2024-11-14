@@ -5,6 +5,17 @@ public class Operaciones {
 	public static void main(String[] args) {
 		Scanner entrada= new Scanner(System.in);
 		int op,a,b,c = 0;
+		switch (op) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+			System.out.println("ingresa valor para a");
+			a=entrada.nextInt();
+			System.out.println("ingresa valor para b");
+			b=entrada.nextInt();
+			break;
+		}
 		
 		System.out.println("Menu");
 		System.out.println("1: Suma");
