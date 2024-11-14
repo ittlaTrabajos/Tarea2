@@ -1,0 +1,78 @@
+
+import java.util.Scanner;
+
+public class Constructora {
+
+    public static void main(String[] args) {
+        Scanner tc = new Scanner(System.in);
+        int op, m;
+        float largo, ancho, terreno, p = 0, iv, tt, des = 0, ma = 0, precioConDescuento = 0;
+        final float IVA = 0.16f;
+
+        System.out.println("Ingrese el largo del terreno: ");
+        largo = tc.nextFloat();
+
+        System.out.println("Ingrese el ancho del terreno: ");
+        ancho = tc.nextFloat();
+        terreno = largo * ancho; 
+
+ 
+        System.out.println("Desea adquirir mano de obra? 1: SI 2: NO");
+        m = tc.nextInt();
+
+
+        System.out.println("MATERIALES");
+        System.out.println("1: GRANITO");
+        System.out.println("2: ADOQUIN");
+        System.out.println("3: LOSETA CERAMICA");
+        System.out.println("4: MARMOL");
+        System.out.println("5: SALIR");
+
+        System.out.println("Ingrese el número de la opción deseada:");
+        op = tc.nextInt();
+
+        if (op < 1 || op > 5) {
+            System.out.println("Número fuera de rango");
+        }
+
+        if (op == 1) {
+            p = 2000 * terreno;
+        } 
+        if (op == 2) {
+            p = 1000 * terreno;
+        }
+        if (op == 3) {
+            p = 800 * terreno;
+        } 
+        if (op == 4) {
+            p = 1500 * terreno;
+        } 
+        if (op == 5) {
+            System.out.println("Gracias por usar nuestro sistema.");
+        }
+
+        if (terreno >= 100) {
+            des = p * 0.05f;
+            precioConDescuento = p - des;
+        } else {
+            precioConDescuento = p; 
+        }
+
+        if (m == 1) {
+            ma = 500 * terreno;
+        }
+
+        iv = precioConDescuento * IVA;
+        tt = precioConDescuento + iv + ma;
+
+
+        System.out.println("Total del terreno (m²): " + terreno);
+        System.out.println("Costo del material: $" + p);
+        System.out.println("Descuento aplicado: $" + des);
+        System.out.println("Subtotal con descuento: $" + precioConDescuento);
+        System.out.println("IVA (16%): $" + iv);
+        System.out.println("Costo de mano de obra: $" + ma);
+        System.out.println("Total a pagar: $" + tt);
+
+    }
+}
